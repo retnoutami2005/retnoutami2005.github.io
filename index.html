@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumen HTML - SMA Negeri 2 Playen</title>
+    <style>
+        /* Reset dasar */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* Styling dari user */
+        body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    color: #1a5f7a;
+}
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPP Interaktif: Pembelajaran Hikayat | Bahasa Indonesia Kelas X</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --dark: #2c3e50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text x="10" y="20" font-size="14" fill="rgba(255,255,255,0.05)">📚</text><text x="40" y="55" font-size="14" fill="rgba(255,255,255,0.05)">✍️</text><text x="70" y="85" font-size="14" fill="rgba(255,255,255,0.05)">🎭</text></svg>');
+            background-repeat: repeat;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        h2 {
+            color: var(--primary);
+            border-left: 5px solid var(--secondary);
+            padding-left: 15px;
+            margin: 25px 0 15px;
+        }
+        
+        h3 {
+            color: var(--dark);
+            margin: 20px 0 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .principles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .principle-card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            flex: 1;
+            min-width: 250px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid;
+        }
+        
+        .principle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .berkesadaran { border-top-color: var(--secondary); }
+        .bermakna { border-top-color: var(--success); }
+        .menggembirakan { border-top-color: var(--warning); }
+        
+        .principle-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+        
+        .tab {
+            padding: 15px 20px;
+            flex: 1;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .tab.active {
+            background-color: var(--light);
+            border-bottom: 3px solid var(--secondary);
+            color: var(--primary);
+        }
+        
+        .tab-content {
+            display: none;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .interactive-section {
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 5px solid var(--accent);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 5px;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+        
+        .btn-success {
+            background-color: var(--success);
+        }
+        
+        .btn-warning {
+            background-color: var(--warning);
+        }
+        
+        .assessment-box {
+            background-color: #f0f7ff;
+            border: 2px dashed #3498db;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .question {
+            margin: 15px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .option {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+        
+        .option:hover {
+            background-color: #e3f2fd;
+            border-left-color: var(--secondary);
+        }
+        
+        .correct {
+            background-color: #d4edda !important;
+            border-left-color: var(--success) !important;
+        }
+        
+        .incorrect {
+            background-color: #f8d7da !important;
+            border-left-color: var(--accent) !important;
+        }
+        
+        .hidden-answer {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #e8f4fc;
+            border-radius: 5px;
+        }
+        
+        .rubric-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .rubric-table th, .rubric-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .rubric-table th {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .rubric-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .progress-container {
+            margin: 20px 0;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: var(--success);
+            width: 0%;
+            transition: width 1s ease-in-out;
+        }
+        
+        .completion-badge {
+            display: inline-block;
+            background-color: var(--success);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+        
+        .tab-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: var(--secondary);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        .interactive-game {
+            background: linear-gradient(135deg, #ffecb3, #ffcc80);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .game-title {
+            color: #e65100;
+            margin-bottom: 20px;
+        }
+        
+        .character-card {
+            display: inline-block;
+            width: 120px;
+            height: 150px;
+            background: white;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .character-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .character-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            color: #7f8c8d;
+            border-top: 1px solid #ecf0f1;
+        }
+        
+        @media (max-width: 768px) {
+            .principles {
+                flex-direction: column;
+            }
+            
+            .nav-tabs {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-book-open"></i> RPP Interaktif: Pembelajaran Hikayat</h1>
+            <div class="subtitle">Bahasa Indonesia Kelas X - Pendekatan Berkesadaran, Bermakna, dan Menggembirakan</div>
+            <div class="progress-container">
+                <div>Progress Pembelajaran: <span id="progress-text">0%</span></div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="principles">
+            <div class="principle-card berkesadaran">
+                <div class="principle-icon"><i class="fas fa-brain"></i></div>
+                <h3>Berkesadaran</h3>
+                <p>Peserta didik menyadari proses belajar mereka sendiri dan menghubungkan materi dengan kehidupan nyata.</p>
+            </div>
+            <div class="principle-card bermakna">
+                <div class="principle-icon"><i class="fas fa-heart"></i></div>
+                <h3>Bermakna</h3>
+                <p>Materi pembelajaran dikaitkan dengan konteks kehidupan sehari-hari dan nilai-nilai yang relevan.</p>
+            </div>
+            <div class="principle-card menggembirakan">
+                <div class="principle-icon"><i class="fas fa-laugh-beam"></i></div>
+                <h3>Menggembirakan</h3>
+                <p>Pembelajaran dirancang menyenangkan, interaktif, dan memotivasi peserta didik.</p>
+            </div>
+        </div>
+        
+        <div class="nav-tabs">
+            <div class="tab active" data-target="overview"><i class="fas fa-home"></i> Overview</div>
+            <div class="tab" data-target="materi"><i class="fas fa-book"></i> Materi & Model</div>
+            <div class="tab" data-target="kegiatan"><i class="fas fa-tasks"></i> Kegiatan</div>
+            <div class="tab" data-target="asesmen"><i class="fas fa-clipboard-check"></i> Asesmen</div>
+            <div class="tab" data-target="rubrik"><i class="fas fa-chart-bar"></i> Rubrik</div>
+            <div class="tab" data-target="digital"><i class="fas fa-laptop-code"></i> Digital Tools</div>
+        </div>
+        
+        <!-- TAB 1: OVERVIEW -->
+        <div class="tab-content active" id="overview">
+            <div class="tab-header">
+                <h2><i class="fas fa-info-circle"></i> Rangkuman RPP</h2>
+                <button class="toggle-btn" data-target="overview-details">
+                    <i class="fas fa-chevron-down"></i> Tampilkan Detail
+                </button>
+            </div>
+            
+            <div class="card">
+                <p><strong>Mata Pelajaran:</strong> Bahasa Indonesia</p>
+                <p><strong>Kelas/Semester:</strong> X/1</p>
+                <p><strong>Alokasi Waktu:</strong> 3 JP (3 × 45 menit)</p>
+                <p><strong>Materi Pokok:</strong> Karakteristik Hikayat dan Unsur Intrinsik (Tokoh, Penokohan, Nilai, Gaya Bahasa)</p>
+            </div>
+            
+            <div class="interactive-section" id="overview-details" style="display: none;">
+                <h3><i class="fas fa-bullseye"></i> Tujuan Pembelajaran</h3>
+                <p>Setelah mengikuti proses pembelajaran, peserta didik mampu:</p>
+                <ol>
+                    <li>Mengidentifikasi pengertian, ciri-ciri, dan struktur hikayat</li>
+                    <li>Menganalisis unsur intrinsik hikayat (tokoh, penokohan, nilai, gaya bahasa)</li>
+                    <li>Membandingkan karakteristik hikayat dengan cerpen modern</li>
+                    <li>Menyajikan hasil analisis unsur intrinsik hikayat dalam bentuk presentasi digital</li>
+                    <li>Menulis ringkasan hikayat dengan penekanan pada nilai karakter yang relevan</li>
+                </ol>
+                
+                <h3><i class="fas fa-graduation-cap"></i> Profil Pelajar Pancasila</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0;">
+                    <span class="btn" style="background-color: #27ae60; padding: 8px 15px; font-size: 0.9rem;">Mandiri</span>
+                    <span class="btn" style="background-color: #3498db; padding: 8px 15px; font-size: 0.9rem;">Kolaboratif</span>
+                    <span class="btn" style="background-color: #9b59b6; padding: 8px 15px; font-size: 0.9rem;">Bernalar Kritis</span>
+                    <span class="btn" style="background-color: #e74c3c; padding: 8px 15px; font-size: 0.9rem;">Kreatif</span>
+                    <span class="btn" style="background-color: #f39c12; padding: 8px 15px; font-size: 0.9rem;">Komunikatif</span>
+                </div>
+            </div>
+            
+            <div class="interactive-game">
+                <h3 class="game-title"><i class="fas fa-gamepad"></i> Tebak Karakter Hikayat</h3>
+                <p>Klik kartu untuk mengetahui karakter dari hikayat terkenal!</p>
+                <div id="character-game">
+                    <div class="character-card" data-character="si-miskin">
+                        <div class="character-icon">👑</div>
+                        <h4>Si Miskin</h4>
+                    </div>
+                    <div class="character-card" data-character="bawang-merah">
+                        <div class="character-icon">🌺</div>
+                        <h4>Bawang Merah</h4>
+                    </div>
+                    <div class="character-card" data-character="bawang-putih">
+                        <div class="character-icon">⭐</div>
+                        <h4>Bawang Putih</h4>
+                    </div>
+                    <div class="character-card" data-character="malin-kundang">
+                        <div class="character-icon">⚓</div>
+                        <h4>Malin Kundang</h4>
+                    </div>
+                </div>
+                <div id="character-info" style="margin-top: 20px; padding: 15px; background: white; border-radius: 8px; display: none;"></div>
+            </div>
+        </div>
+        
+        <!-- TAB 2: MATERI & MODEL -->
+        <div class="tab-content" id="materi">
+            <h2><i class="fas fa-chalkboard-teacher"></i> Model & Metode Pembelajaran</h2>
+            
+            <div class="card">
+                <h3><i class="fas fa-project-diagram"></i> Model: Problem Based Learning (PBL)</h3>
+                <p>Pendekatan pembelajaran yang berpusat pada masalah kontekstual untuk mengembangkan keterampilan berpikir kritis dan pemecahan masalah.</p>
+                
+                <h4>Sintaks PBL:</h4>
+                <ol>
+                    <li><strong>Orientasi peserta didik pada masalah</strong> - Hikayat sebagai teks tradisional yang mengandung nilai</li>
+                    <li><strong>Mengorganisasi peserta didik untuk belajar</strong> - Pembentukan kelompok diskusi</li>
+                    <li><strong>Membimbing penyelidikan individu/kelompok</strong> - Analisis unsur intrinsik hikayat</li>
+                    <li><strong>Mengembangkan dan menyajikan hasil karya</strong> - Presentasi digital hasil analisis</li>
+                    <li><strong>Menganalisis dan mengevaluasi proses pemecahan masalah</strong> - Refleksi dan evaluasi</li>
+                </ol>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-tools"></i> Metode Pembelajaran</h3>
+                <ul>
+                    <li><strong>Diskusi Kelompok Terpimpin</strong> - Diskusi terstruktur dengan LKPD</li>
+                    <li><strong>Presentasi Interaktif</strong> - Penyajian hasil analisis dengan media digital</li>
+                    <li><strong>Studi Kasus</strong> - Analisis hikayat "Si Miskin" atau "Bawang Merah Bawang Putih"</li>
+                    <li><strong>Tanya Jawab Interaktif</strong> - Dialog untuk mengembangkan berpikir kritis</li>
+                    <li><strong>Role Play Singkat</strong> - Dramatisasi nilai-nilai dalam hikayat</li>
+                </ul>
+            </div>
+            
+            <div class="interactive-section">
+                <h3><i class="fas fa-lightbulb"></i> Identifikasi Peserta Didik</h3>
+                <div id="student-profile">
+                    <div class="question">
+                        <p><strong>Menurut Anda, bagaimana kesiapan peserta didik dalam mempelajari hikayat?</strong></p>
+                        <div class="option" data-correct="true">1. Sebagian besar sudah pernah mendengar cerita rakyat, tetapi belum mengenal istilah "hikayat" secara spesifik</div>
+                        <div class="option">2. Sudah memahami dengan baik perbedaan hikayat dengan cerpen modern</div>
+                        <div class="option">3. Sama sekali tidak memiliki pengetahuan tentang cerita rakyat</div>
+                        <div class="option">4. Hanya tertarik pada cerita-cerita modern saja</div>
+                    </div>
+                    <button class="btn btn-success" id="check-answer">Periksa Jawaban</button>
+                    <div class="hidden-answer" id="student-answer">
+                        <p><strong>Analisis Kesiapan Peserta Didik:</strong></p>
+                        <ul>
+                            <li><strong>Pengetahuan awal:</strong> Sebagian besar sudah pernah mendengar cerita rakyat, tetapi belum mengenal istilah "hikayat" secara spesifik</li>
+                            <li><strong>Minat:</strong> Tertarik pada cerita-cerita bernilai moral, tetapi kurang tertarik jika penyampaiannya monoton</li>
+                            <li><strong>Latar belakang:</strong> Berasal dari beragam latar budaya, beberapa sudah familiar dengan cerita daerah</li>
+                            <li><strong>Kebutuhan belajar:</strong> Memerlukan pendekatan kontekstual, visual, dan kolaboratif</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- TAB 3: KEGIATAN PEMBELAJARAN -->
+        <div class="tab-content" id="kegiatan">
+            <h2><i class="fas fa-list-ol"></i> Kegiatan Pembelajaran</h2>
+            
+            <div class="card">
+                <h3><i class="fas fa-play-circle"></i> Kegiatan Awal (20 menit)</h3>
+                <ul>
+                    <li><strong>Orientasi bermakna:</strong> Menayangkan cuplikan film pendek adaptasi hikayat</li>
+                    <li><strong>Apersepsi kontekstual:</strong> Tanya jawab pengalaman mendengar cerita rakyat</li>
+                    <li><strong>Motivasi menggembirakan:</strong> Games "Tebak Tokoh" dari cerita rakyat terkenal</li>
+                </ul>
+                <button class="btn" id="simulate-starter"><i class="fas fa-play"></i> Simulasikan Kegiatan Awal</button>
+                <div id="starter-simulation" style="display: none; margin-top: 15px; padding: 15px; background: #f0f7ff; border-radius: 8px;">
+                    <p><strong>Simulasi Games "Tebak Tokoh":</strong></p>
+                    <p>Guru: "Dia adalah anak durhaka yang dikutuk menjadi batu karena tidak mengakui ibunya sendiri. Siapakah dia?"</p>
+                    <p>Siswa: <input type="text" id="guess-character" placeholder="Masukkan nama tokoh"> <button class="btn btn-success" id="submit-guess">Tebak</button></p>
+                    <p id="guess-result"></p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-cogs"></i> Kegiatan Inti (90 menit)</h3>
+                
+                <div class="interactive-section">
+                    <h4><i class="fas fa-brain"></i> Tahap MEMAHAMI (30 menit) - Prinsip Berkesadaran</h4>
+                    <p>Siswa membaca hikayat "Si Miskin" atau "Bawang Merah Bawang Putih" versi singkat, kemudian diskusi kelompok tentang pengertian dan ciri-ciri hikayat.</p>
+                    <p><strong>Aktivitas Interaktif:</strong> Drag and drop ciri-ciri hikayat</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0;">
+                        <div class="character-card" draggable="true" data-correct="true">Mengandung nilai moral</div>
+                        <div class="character-card" draggable="true" data-correct="false">Ditulis tahun 2020</div>
+                        <div class="character-card" draggable="true" data-correct="true">Berasal dari tradisi lisan</div>
+                        <div class="character-card" draggable="true" data-correct="false">Menggunakan bahasa gaul modern</div>
+                        <div class="character-card" draggable="true" data-correct="true">Bersifat anonim (tidak diketahui pengarangnya)</div>
+                    </div>
+                    <div style="padding: 20px; background: white; border: 2px dashed #3498db; border-radius: 8px; min-height: 100px;" id="drop-zone">
+                        <p><strong>Area Ciri-Ciri Hikayat yang Benar:</strong> Tarik dan lepas ciri-ciri yang benar ke sini</p>
+                    </div>
+                </div>
+                
+                <div class="interactive-section">
+                    <h4><i class="fas fa-hands-helping"></i> Tahap MENGAPLIKASI (40 menit) - Prinsip Bermakna</h4>
+                    <p>Setiap kelompok menganalisis unsur intrinsik (tokoh, penokohan, nilai, gaya bahasa) dan membuat presentasi digital.</p>
+                    <p><strong>Contoh Analisis Nilai dalam Hikayat:</strong></p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 15px 0;">
+                        <div class="card" style="flex: 1; min-width: 200px;">
+                            <h5>Nilai Moral</h5>
+                            <p>Kejujuran, kesetiaan, tanggung jawab</p>
+                        </div>
+                        <div class="card" style="flex: 1; min-width: 200px;">
+                            <h5>Nilai Sosial</h5>
+                            <p>Gotong royong, toleransi, menghormati orang tua</p>
+                        </div>
+                        <div class="card" style="flex: 1; min-width: 200px;">
+                            <h5>Nilai Budaya</h5>
+                            <p>Melestarikan tradisi, mengenal kearifan lokal</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="interactive-section">
+                    <h4><i class="fas fa-comments"></i> Tahap MEREFLEKSI (20 menit) - Prinsip Menggembirakan</h4>
+                    <p>Presentasi hasil analisis dan refleksi: "Nilai apa yang masih relevan dengan kehidupan kalian sekarang?"</p>
+                    <div id="reflection-box">
+                        <p><strong>Bagikan refleksi Anda:</strong></p>
+                        <textarea id="reflection-input" rows="3" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ddd; margin-bottom: 10px;" placeholder="Tulis refleksi Anda tentang nilai-nilai dalam hikayat yang relevan dengan kehidupan Anda..."></textarea>
+                        <button class="btn" id="submit-reflection"><i class="fas fa-paper-plane"></i> Kirim Refleksi</button>
+                        <div id="reflection-output" style="margin-top: 15px; display: none;">
+                            <p><strong>Refleksi Anda:</strong> <span id="reflection-text"></span></p>
+                            <p><em>Refleksi ini membantu menguatkan pemahaman bermakna tentang nilai-nilai dalam hikayat!</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-flag-checkered"></i> Kegiatan Penutup (10 menit)</h3>
+                <ul>
+                    <li>Guru menyimpulkan pembelajaran</li>
+                    <li>Siswa menulis refleksi singkat di Google Classroom</li>
+                    <li>Penugasan: mencari contoh hikayat dari daerah masing-masing</li>
+                </ul>
+                <p><strong>Prinsip yang diterapkan:</strong> Berkesadaran dan Bermakna</p>
+            </div>
+        </div>
+        
+        <!-- TAB 4: ASESMEN -->
+        <div class="tab-content" id="asesmen">
+            <h2><i class="fas fa-clipboard-list"></i> Asesmen Pembelajaran</h2>
+            
+            <div class="assessment-box">
+                <h3><i class="fas fa-hourglass-start"></i> Asesmen Awal (Diagnostik)</h3>
+                <p>Untuk mengetahui kesiapan belajar peserta didik sebelum pembelajaran.</p>
+                
+                <div class="question">
+                    <p><strong>1. Hikayat berasal dari tradisi sastra...</strong></p>
+                    <div class="option" data-question="1" data-answer="b">a) Jawa Kuno</div>
+                    <div class="option" data-question="1" data-answer="b">b) Melayu</div>
+                    <div class="option" data-question="1" data-answer="b">c) Sunda</div>
+                    <div class="option" data-question="1" data-answer="b">d) Bali</div>
+                    <div class="option" data-question="1" data-answer="b">e) Bugis</div>
+                </div>
+                
+                <div class="question">
+                    <p><strong>2. Unsur intrinsik dalam hikayat meliputi...</strong></p>
+                    <div class="option" data-question="2" data-answer="e">a) Tokoh dan penokohan</div>
+                    <div class="option" data-question="2" data-answer="e">b) Nilai dan amanat</div>
+                    <div class="option" data-question="2" data-answer="e">c) Gaya bahasa</div>
+                    <div class="option" data-question="2" data-answer="e">d) Alur dan latar</div>
+                    <div class="option" data-question="2" data-answer="e">e) Semua jawaban benar</div>
+                </div>
+                
+                <button class="btn" id="check-initial-assessment">Periksa Jawaban Asesmen Awal</button>
+                <div id="assessment-results" style="display: none; margin-top: 20px;">
+                    <h4>Hasil Asesmen Awal Anda:</h4>
+                    <p>Skor: <span id="score">0</span>/2</p>
+                    <p id="feedback"></p>
+                </div>
+            </div>
+            
+            <div class="assessment-box">
+                <h3><i class="fas fa-spinner"></i> Asesmen Proses (Formatif)</h3>
+                <p>Untuk memantau perkembangan peserta didik selama pembelajaran.</p>
+                <p><strong>Contoh Instrumen:</strong> Lembar Observasi Diskusi Kelompok</p>
+                <button class="btn" id="view-observation-form"><i class="fas fa-eye"></i> Lihat Contoh Lembar Observasi</button>
+                
+                <div id="observation-form" style="display: none; margin-top: 20px; padding: 15px; background: white; border-radius: 8px;">
+                    <h4>Lembar Observasi Diskusi Kelompok</h4>
+                    <table class="rubric-table">
+                        <tr>
+                            <th>Aspek yang Dinilai</th>
+                            <th>Baik (4)</th>
+                            <th>Cukup (3)</th>
+                            <th>Kurang (2)</th>
+                            <th>Skor</th>
+                        </tr>
+                        <tr>
+                            <td>Partisipasi dalam diskusi</td>
+                            <td>Aktif memberi ide dan pendapat</td>
+                            <td>Hanya merespon ketika ditanya</td>
+                            <td>Pasif, tidak memberikan kontribusi</td>
+                            <td><select class="score-select">
+                                <option value="0">Pilih</option>
+                                <option value="4">4</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td>Kolaborasi dengan anggota kelompok</td>
+                            <td>Saling mendukung dan bekerja sama dengan baik</td>
+                            <td>Ada upaya kerja sama tetapi belum optimal</td>
+                            <td>Bekerja individual, tidak ada kerja sama</td>
+                            <td><select class="score-select">
+                                <option value="0">Pilih</option>
+                                <option value="4">4</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td>Kedalaman analisis unsur intrinsik</td>
+                            <td>Analisis mendalam dan kritis</td>
+                            <td>Analisis masih umum dan deskriptif</td>
+                            <td>Hanya menyebutkan fakta tanpa analisis</td>
+                            <td><select class="score-select">
+                                <option value="0">Pilih</option>
+                                <option value="4">4</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                            </select></td>
+                        </tr>
+                    </table>
+                    <button class="btn" id="calculate-score" style="margin-top: 15px;">Hitung Skor Observasi</button>
+                    <div id="observation-score" style="display: none; margin-top: 15px; padding: 10px; background: #e8f4fc; border-radius: 5px;"></div>
+                </div>
+            </div>
+            
+            <div class="assessment-box">
+                <h3><i class="fas fa-flag-checkered"></i> Asesmen Akhir (Sumatif)</h3>
+                <p>Untuk mengukur pencapaian tujuan pembelajaran.</p>
+                <p><strong>Bentuk Soal:</strong> 10 PG + 5 Essay analisis kasus</p>
+                <button class="btn" id="try-final-example"><i class="fas fa-pen"></i> Coba Contoh Soal Essay</button>
+                
+                <div id="final-example" style="display: none; margin-top: 20px;">
+                    <div class="question
+    
+    <script>
+        console.log('Media Pembelajaran Interaktif');
+    </script>
+</body>
+</html>
